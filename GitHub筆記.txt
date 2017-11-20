@@ -1,0 +1,14 @@
+1.新增
+	1.建立資料夾
+	2.用DOS進入folder
+	3.輸入指令 "git init" 
+	4.新增檔案(a.txt)
+	5.輸入指令 "git add ." => "git commit -m a.txt", 即可commit成功
+	6.最後可輸入 "git push"來上到server端
+2.修改
+	1.從server還原 "git pull"
+	2.還原commit "git reset <版本號> <檔案名稱>"
+	3.還原資料夾檔案 "git checkout <檔案名稱>"
+3.相關指令
+	1."git status", "git diff"
+	2."git reset --hard HEAD" 還原全部
