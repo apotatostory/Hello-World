@@ -12,3 +12,8 @@
 3.相關指令
 	1."git status", "git diff"
 	2."git reset --hard HEAD" 還原全部
+
+4.push:
+	1.本地端要先"git add " 相關檔案, 在用"git status" 查看狀態
+	2.狀態確認後在用"git commit ", 然後最好先"git pull"來更新local的版本&merge
+	3.如果沒有衝突就可以直接"git push"上去, 有衝突要手動解決或先放到暫存"stash"
