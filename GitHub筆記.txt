@@ -4,7 +4,7 @@
 	3.輸入指令 "git init" 
 	4.新增檔案(a.txt)
 	5.輸入指令 "git add ." => "git commit -m a.txt", 即可commit成功
-	6.最後可輸入 "git push"來上到server端
+	6.最後可輸入 "git push -u origin master"來上到server端
 2.修改
 	1.從server還原 "git pull"
 	2.還原commit "git reset <版本號> <檔案名稱>"
