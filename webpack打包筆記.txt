@@ -1,0 +1,21 @@
+// 安裝webpack套件
+npm i webpack-cli webpack -D
+
+1.打包React教學
+	/**
+	* babel-preset-env for compiling Javascript ES6 code down to ES5 (please note that babel-preset-es2015 is now deprecated)
+	* babel-preset-react for compiling JSX and other stuff down to Javascript
+	*/
+	1.安裝babel相關套件
+		npm i babel-loader babel-core babel-preset-env babel-preset-react -D
+	2.在package.json寫入
+		"scripts": {
+		  "build": "webpack --mode production"
+		}
+	3.新增".babelrc"檔案並寫入
+		{
+			"presets": ["env", "stage-3", "react"]
+		}
+	4.打包html元素，安裝相關套件
+		npm i html-webpack-plugin html-loader -D
+	

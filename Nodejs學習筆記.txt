@@ -1,0 +1,31 @@
+socket.io:
+	1、基本的connection(實作有兩種方法)
+		1.需要http模組
+			import express from 'express';
+			import http from 'http';
+			import io from 'socket.io';
+
+			const app = express();
+			const server = http.createServer(app);
+			const socket = io.listen(server);
+
+			app.get('/', (req, res) => {res.sendfile('./server/index.html');});
+
+			socket.on('connection', socket => {});
+
+			app.listen(3001, () => {});
+		
+		2.不需要http模組
+			import express from 'express';
+			import io from 'socket.io';
+
+			const app = express();
+			const server = app.listen(3001, _ => {})
+			const socket = io(server);
+
+			app.get('/', (req, res) => {res.sendfile('./server/index.html');});
+
+			socket.on('connection', socket => {
+			});
+	
+	2、其他要被註冊的事件必須寫在connection裡面，才會註冊成功。

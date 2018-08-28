@@ -1,0 +1,13 @@
+EurekaServer:
+	1.要dependency: eureka-server
+	2.設定application.yml檔案
+	如果使用java10，需要dependencies
+	// java10相關api需要最新版
+	compile('javax.xml.bind:jaxb-api:2.3.0')
+	compile('org.glassfish.jaxb:jaxb-runtime:2.3.0')
+	compile('javax.activation:javax.activation-api:1.2.0')
+	
+EurekaClient:
+	1.要dependency: eureka-discovery, eureka-server, web-application
+	2.設定application.yml檔案
+	3.restcontrol要寫在這
