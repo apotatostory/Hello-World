@@ -11,3 +11,20 @@ EurekaClient:
 	1.要dependency: eureka-discovery, eureka-server, web-application
 	2.設定application.yml檔案
 	3.restcontrol要寫在這
+
+Ribbon & FeignClient:
+	1.都可以做到load balance(FC有包含ribbon的效果)
+	2.@FeignClient(name = "producer-service", fallback = ProducerServiceFeignClientHystrix.class)
+		name屬性是要調用的property的spring.application.name, fallback是失敗要調用的
+	3.properties檔案feign.hystrix.enabled = true(無回應時候的fallback是否開啟,預設false)
+	
+Zuul:
+	1.dependency: eureka-discovery, eureka-server, web-application, zuul
+	2.設定application.yml檔案(參考範本)
+	3.不但可以當路由,還可以過濾,安全驗證
+
+/* 提示 */
+如果想要auto restart, 只要dependency devtools, 然後再property增加spring.devtools.restart.enable =  true
+
+/* 遇到的問題 */
+1.一直啟動不了eureka client, 原因是要@ComponentScan, 或是指定@Autowired的作用域
